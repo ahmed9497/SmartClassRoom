@@ -1,0 +1,75 @@
+
+/*qrcode navbar generator styling*/
+.container-fluid{
+  /*background-color: #2A9B15;*/
+  background-color: darkgreen;
+}
+.setting{
+  height: 35px;
+  margin-top: 5px;
+}
+.iconsetting{
+  margin-top:10px ;
+  color: white;
+  /*color: #000403;*/
+}
+
+
+/*//card styling*/
+
+
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
+
+.card-header {
+  background-color: purple;
+  height: 100px;
+}
+
+.social-line {
+  background-color: purple;
+}
+
+.btn-primary {
+  background-color: purple;
+  border: none;
+}
+
+.border-setting {
+  border-radius: 5px;
+  padding: 20px;
+  width: 90%;
+  height: 150px;
+  top: -30px;
+  position: relative;
+  left: 18px;
+
+}
+
+.border-setting2 {
+  border-radius: 5px;
+  height: 300px;
+}
+
+.card-inner {
+  background-color: white;
+  border-radius: 5px;
+}
+.qrsetting{
+  margin-left: 100px;
+}
+.inputsetting{
+  height: 35px;
+  /*margin-top: 80px;*/
+  margin-left: 50px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.text{
+  color: white;
+  margin-left: 30px;
+}

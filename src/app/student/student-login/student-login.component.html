@@ -1,0 +1,120 @@
+<!--<div class="container">-->
+  <!--<div class="row">-->
+
+    <!--<form [formGroup]="loginForm">-->
+      <!--<div class="form-group">-->
+        <!--<div class="col-lg-7">-->
+          <!--<span><i class="fa fa-fw fa-user"></i></span>-->
+          <!--<label>Email address:</label>-->
+          <!--<input type="email" class="form-control" formControlName="email" placeholder="someone@example.com">-->
+          <!--<div *ngIf="email.touched && email.errors">-->
+            <!--<div class="text-danger" *ngIf="email.errors.required">-->
+              <!--Email is required!-->
+            <!--</div>-->
+            <!--<div class="text-danger" *ngIf="email.errors.email">-->
+              <!--Email is not valid!-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="form-group">-->
+        <!--<div class="col-lg-7">-->
+          <!--<span><i class="fa fa-fw fa-key"></i></span>-->
+          <!--<label>Password:</label>-->
+          <!--<input type="password" class="form-control" formControlName="password" placeholder="******">-->
+          <!--<div *ngIf="password.touched && password.errors">-->
+            <!--<div class="text-danger" *ngIf="password.errors.required">-->
+              <!--Password is required!-->
+            <!--</div>-->
+            <!--<div class="text-danger" *ngIf="password.errors.minlength">-->
+              <!--Paasword must contain more than 6 letter!-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--&lt;!&ndash;<pre>&ndash;&gt;-->
+      <!--&lt;!&ndash;{{loginForm.value | json}}&ndash;&gt;-->
+      <!--&lt;!&ndash;</pre>&ndash;&gt;-->
+      <!--<div class="checkbox col-lg-6">-->
+        <!--<label><input type="checkbox"> Remember me</label>-->
+      <!--</div>-->
+      <!--<div class="col-lg-8">-->
+        <!--<button type="submit" (click)="login()" [disabled]="!loginForm.valid" class="btn btn-primary">Submit</button>-->
+        <!--&lt;!&ndash;<button type="submit" (click)="openSnackBar('Assalam o Alaikum!', '❌') && login()" class="btn btn-default">Submit</button>&ndash;&gt;-->
+      <!--</div>-->
+    <!--</form>-->
+  <!--</div>-->
+  <!--<p>Did not Registered?<a routerLink="../student-registration">Click Here</a></p>-->
+<!--</div>-->
+
+<div class="section section-signup page-header"
+     style="background-image: url('http://backgroundcheckall.com/wp-content/uploads/2017/12/software-company-background-images-4.jpg');padding:120px;">
+  <div class="container">
+    <div class="row">
+      <form [formGroup]="loginForm">
+        <div class="col-md-4 ml-auto mr-auto">
+          <div class="card card-signup" style="border: 1px solid black">
+            <!-- <form class="form" method="" action=""> -->
+            <div class="card-header card-header-primary text-center border-setting">
+              <h4 style="color: white">Login </h4>
+              <div class="social-line">
+                <a routerLink="../student-registration" class="btn btn-primary btn-just-icon">
+                  <i class="fa fa-facebook-square"></i>
+                </a>
+                <a routerLink="../student-registration" class="btn btn-primary btn-just-icon">
+                  <i class="fa fa-twitter"></i>
+                </a>
+                <a routerLink="../student-registration" class="btn btn-primary btn-just-icon">
+                  <i class="fa fa-google-plus"></i>
+                </a>
+              </div>
+              <a class="text-center" routerLink="../student-registration" style="color: white">Join Us</a>
+            </div>
+            <!--<p class="text-divider text-center alert alert-danger" *ngIf="error">ERROR:{{error}}</p>-->
+            <div class="card-body border-setting2">
+
+              <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                <input type="email" class="form-control" formControlName="email" placeholder="someone@example.com">
+                <div *ngIf="email.touched && email.errors">
+                  <div class="text-danger" *ngIf="email.errors.required">
+                    Email is required!
+                  </div>
+                  <div class="text-danger" *ngIf="email.errors.email">
+                    Email is not valid!
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-key"></i>
+                                </span>
+                <input type="password" class="form-control" formControlName="password" placeholder="******">
+                <div *ngIf="password.touched && password.errors">
+                  <div class="text-danger" *ngIf="password.errors.required">
+                    Password is required!
+                  </div>
+                  <div class="text-danger" *ngIf="password.errors.minlength">
+                    Paasword must contain more than 6 letter
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <div class="card-footer">
+              <div class="text-center">
+                <button class="btn btn-primary">Get Started</button>
+              </div>
+            </div>
+            <!-- </form> -->
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let student of students">
+    <td>{{student.fName | uppercase}}</td>
+    <td>{{student.lName}}</td>
+    <td>{{student.password}}</td>
+    <td>{{student.email}}</td>
+    <td><a [routerLink]="['../profile',student]">Display</a></td>
+  </tr>
+
+  </tbody>
+</table>
+
+<!--<a routerLink="../profile"><span class="glyphicon glyphicon-plus"></span></a>-->

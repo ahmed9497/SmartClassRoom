@@ -1,0 +1,101 @@
+<div class="container">
+  <div class="row">
+
+    <form [formGroup]="registrationForm">
+<div class="form-group">
+  <div class="col-sm-4">
+  <label>First Name:</label>
+  <input  type="text" class="form-control" formControlName="fName" placeholder="Enter Your First Name">
+    <div *ngIf="fName.touched && fName.errors">
+      <div class="text-danger" *ngIf="fName.errors.required">
+        Name is Required!
+      </div>
+    </div>
+</div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-4">
+  <label>Last Name:</label>
+  <input type="text" class="form-control" formControlName="lName" placeholder="Enter Last Name">
+    <div *ngIf="lName.touched && lName.errors">
+      <div class="text-danger" *ngIf="lName.errors.required">
+        Name is Required!
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-6">
+  <label>Address:</label>
+  <input type="text" class="form-control" formControlName="address" placeholder="Enter Your Address">
+    <div *ngIf="address.touched && address.errors">
+      <div class="text-danger" *ngIf="address.errors.required">
+        Address is Required!
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-2">
+  <label>Enter Cell#:</label>
+  <input type="number" class="form-control" formControlName="cell" placeholder="Enter Cell No">
+    <div *ngIf="cell.touched && cell.errors">
+      <div class="text-danger" *ngIf="cell.errors.required">
+        Cell No is Required!
+      </div>
+      <div class="text-danger" *ngIf="cell.errors.minLength">
+        Enter Valid Number!
+      </div>
+      <div class="text-danger" *ngIf="cell.errors.maxLength">
+        Number must contain maximum 11 characters!
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-8">
+  <label>Enter Email:</label>
+  <input type="email" class="form-control" formControlName="email" placeholder="someone@gmail.com">
+    <div *ngIf="email.touched && email.errors">
+      <div class="text-danger" *ngIf="email.errors.required">
+        Email is Required!
+      </div>
+      <div class="text-danger" *ngIf="email.errors.email">
+        Enter Valid Email!
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-8">
+  <label>Enter Password:</label>
+  <input type="password" class="form-control" formControlName="password" placeholder="Enter Password">
+    <div *ngIf="password.touched && password.errors">
+      <div class="text-danger" *ngIf="password.errors.required">
+        Password is Required
+      </div>
+      <div class="text-danger" *ngIf="password.errors.minlength">
+        Paasword must contain more than 6 letter
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="radio col-sm-6">
+  <label><input type="radio" formControlName="gender" value="male" >Male</label>
+</div>
+<div class="radio col-sm-8">
+  <label><input type="radio" formControlName="gender" value="female">Female</label>
+</div>
+
+    <div class="col-lg-12">
+<button type="submit" (click)="registration()" [disabled]="!registrationForm.valid" class="btn btn-primary">Submit</button>
+    </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div>
+  <input [(ngModel)]="searchstring" type="text" placeholder="Search.." id="search">
+  <button (click)="search()" type="submit" class="btn btn-default">Search</button>
+</div>
+
+<table class="table table-bordered">
+  <tr>
+    <td>Name</td>
+    <td>{{weather.location.name}}</td>
+  </tr>
+  <tr>
+    <td>Region</td>
+    <td>{{weather.location.region}}</td>
+  </tr>
+  <tr>
+    <td>Country</td>
+    <td>{{weather.location.country}}</td>
+  </tr>
+  <tr>
+    <td>Last Updated</td>
+    <td>{{weather.current.last_updated}}</td>
+  </tr>
+  <tr>
+    <td>Temp in Far</td>
+    <td>{{weather.current.temp_f}}</td>
+  </tr>
+  <tr>
+    <td>Temp in Cal</td>
+    <td>{{weather.current.temp_c}}</td>
+  </tr>
+  <tr>
+    <td>Condition</td>
+    <td>{{weather.current.condition.text}}</td>
+  </tr>
+</table>

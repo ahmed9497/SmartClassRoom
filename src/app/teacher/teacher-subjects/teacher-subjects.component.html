@@ -1,0 +1,17 @@
+<p>
+  teacher-subjects works!
+</p>
+
+<div class="container">
+  <!--<div class="row">-->
+  <div class="col-lg-4">
+    <div *ngFor="let subject of subjects">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><a routerLink="../lec-data"><h2>{{subject.subjectname}}</h2><br>{{subject.student}}</a></div>
+        <div class="panel-body">{{subject.body}}</div>
+        <div class="panel-footer">{{subject.footer}}</div>
+      </div>
+    </div>
+  </div>
+  <!--</div>-->
+</div>

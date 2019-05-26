@@ -1,0 +1,25 @@
+.no-border{   /* to finish border and combine color of input box and panel footer*/
+  border: none;
+  box-shadow: none;
+  background-color: white;
+}
+.panel-footer{
+  background-color: white;
+}
+.container{
+  margin-top: 40px;
+}
+
+/*Navbar Setting*/
+.container-fluid{
+  background-color: darkgreen;
+}
+.iconsetting{
+  margin-top:10px ;
+  color: white;
+}
+.text{
+  color: white;
+  margin-left: 30px;
+}
+

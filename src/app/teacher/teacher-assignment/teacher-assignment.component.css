@@ -1,0 +1,49 @@
+
+.no-border{   /* to finish border and combine color of input box and panel footer*/
+  border: none;
+  box-shadow: none;
+  background-color: white;
+}
+.panel-footer{
+  background-color: white;
+}
+.container{
+  margin-top: 40px;
+}
+/*.panel-heading{*/
+  /*background-color: darkgreen;*/
+  /*height: 50px;*/
+/*}*/
+/*Navbar Setting*/
+.navbarsetting{
+  /*background-color: #2A9B15;*/
+  background-color: darkgreen;
+}
+.iconsetting{
+  margin-top:10px ;
+  color: white;
+  /*color: #000403;*/
+}
+.text{
+  color: white;
+  margin-left: 30px;
+}
+
+/*Table Setting*/
+.thead-dark{
+  background-color: #337ab7;
+}
+
+/*Obtained Marks Border Setting*/
+.input-border{
+  width: 30px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0px;
+}
+.table{
+  border: 1px solid;
+}

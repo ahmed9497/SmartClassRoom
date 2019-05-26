@@ -1,0 +1,30 @@
+/*Navbar Setting*/
+.navbarsetting{
+  /*background-color: #2A9B15;*/
+  background-color: darkgreen;
+}
+
+.text{
+  color: white;
+  margin-left: 30px;
+}
+
+/*Image Setting of Navbar*/
+.setting{
+  height: 30px;
+  width: 60px;
+  /*padding-bottom: 10px;*/
+  background: white;
+}
+/*Input of table border setting*/
+.no-border{
+  border: none;
+}
+.head-setting{
+  background-color: #337ab7;
+  color: white;
+}
+
+/*.text{*/
+  /*color: white;*/
+/*}*/

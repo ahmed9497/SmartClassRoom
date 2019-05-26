@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-lg-4"></div>
+  <div class="col-lg-4">
+
+    <div class="form-group">
+      <label for="fname">First Name:</label>
+      <input [(ngModel)]="student.fName" type="text" class="form-control" id="fname">
+    </div>
+
+    <div class="form-group">
+      <label for="lname">Last Name:</label>
+      <input [(ngModel)]="student.lName" type="text" class="form-control" id="lname">
+    </div>
+
+    <div class="form-group">
+
+      <label for="email">Email address:</label>
+      <input [(ngModel)]="student.email" required minlength="8"  #contactemail="ngModel"pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" type="email" class="form-control" id="email">
+      <div class="md-errors-spacer" [hidden]="contactemail.valid || contactemail.untouched">
+        <div  *ngIf="contactemail.errors && contactemail.errors.required">
+          Email is required
+        </div>
+        <div  *ngIf="contactemail.errors && contactemail.errors.pattern">
+          Email is invalid
+        </div>
+        <div *ngIf="contactemail.errors && contactemail.errors.minlength">
+          Name must be at least 8 characters long.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input [(ngModel)]="student.password" type="password" class="form-control" id="pwd">
+    </div>
+    <div class="form-group">
+      <label for="sel1">Select list:</label>
+      <select [(ngModel)]="student.slct"  class="form-control" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+    <div class="radio">
+      <label><input type="radio" [(ngModel)]="student.radio" value="Option 1" >Option 1</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" [(ngModel)]="student.radio" value="Option 2">Option 2</label>
+    </div>
+    <div class="radio disabled">
+      <label><input type="radio" [(ngModel)]="student.radio"  value="Option 3" disabled>Option 3</label>
+    </div>
+
+    <div class="checkbox">
+      <label><input [(ngModel)]="student.chk" type="checkbox"> Remember me</label>
+    </div>
+    <button type="submit"  class="btn btn-default">Submit</button>
+
+
+  </div>
+  <div class="col-lg-4"></div>
+</div>
+<div>{{student | json}}</div>
+

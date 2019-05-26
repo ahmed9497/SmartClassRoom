@@ -1,0 +1,80 @@
+<!--<form formGroup="assignmentForm">-->
+<!--<div class="form-group">-->
+<!--<div class="container">-->
+<!--<div class="jumbotron">-->
+<!--<div class="md-form">-->
+<!--<label for="question">Questions</label>-->
+<!--<textarea type="text" id="question" formControlName="question" class="md-textarea form-control" rows="4"></textarea>-->
+<!--</div>-->
+<!--<div class="col-sm-4" style=" margin-top: 7px">-->
+<!--<button type="submit" (click)="quiz()" class="btn btn-primary">Submit</button>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</form>-->
+
+<!--<form formGroup="assignmentForm">-->
+<!--<div class="form-group">-->
+<!--<div class="container">-->
+<!--<div class="jumbotron">-->
+<!--<div class="md-form">-->
+<!--<label for="answer">Answer</label>-->
+<!--<textarea type="text" id="answer" formControlName="answer" class="md-textarea form-control" rows="4"></textarea>-->
+<!--</div>-->
+<!--<div class="col-sm-4" style=" margin-top: 7px">-->
+<!--<button type="submit" (click)="quiz()" class="btn btn-primary">Submit</button>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</form>-->
+
+<div class="container-fluid" style="border: 1px solid black">
+  <!--<h2>QR code generator</h2>-->
+  <div class="col-sm-4">
+    <a href="#"><i class="fa fa-question-circle fa-3x col-sm-2 iconsetting"></i></a>
+  </div>
+  <div class="col-sm-6 text">
+    <h3>Teacher Quiz Create</h3>
+  </div>
+</div>
+
+<div class="row">     <!--*ngFor="let quiz of quizs"-->
+  <form formGroup="quizForm">
+    <div class="col-sm-6 col-lg-offset-3">
+      <div class="card text-center bg-primary">
+        <!--<div class="card-header">{{quizService.qnProgress+1}}</div>-->
+        <div class="card-body">
+          <h5 class="card-title"><input type="text" class="form-control" formControlName="question"
+                                        placeholder="Enter Question"></h5>
+          <div class="radio">
+            <!--<label><input type="radio" name="option" value="A"/></label>-->
+            <label>A</label> <input type="text" name="question-1-answers" id="question-1-answers-A" value=""/>
+          </div>
+          <div class="radio">
+            <!--<label><input type="radio" name="option" value="B"/></label>-->
+            <label>B</label><input type="text" name="question-1-answers" id="question-1-answers-B" value=""/>
+          </div>
+          <div class="radio">
+            <!--<label><input type="radio" name="option" value="C"/></label>-->
+            <label>C</label> <input type="text" name="question-1-answers" id="question-1-answers-C" value=""/>
+          </div>
+          <div class="radio">
+            <!--<label><input type="radio" name="option" value="D"/></label>-->
+            <label>D</label> <input type="text" name="question-1-answers" id="question-1-answers-D" value=""/>
+          </div>
+        </div>
+        <div class="card-footer">
+          <label class="f"><input type="text" formControlName="answer" placeholder="Enter Correct Answer"></label>
+          <div>
+            <label><button type="submit" (click)="submit()" class="btn btn-primary">
+              Next
+            </button>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

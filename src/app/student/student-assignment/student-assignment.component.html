@@ -1,0 +1,50 @@
+<div class="container-fluid navbarsetting" style="border: 1px solid black">
+  <!--<h2>QR code generator</h2>-->
+  <div class="col-sm-4">
+    <a href="#"><i class="fa fa-tasks fa-3x col-sm-2 iconsetting"></i></a>
+  </div>
+  <div class="col-sm-6 text">
+    <h3>Student Assignment</h3>
+  </div>
+</div>
+
+
+
+
+<div class="container">
+<div class="col-lg-3">
+<div class="panel-group">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Heading(Upcomming)</div>
+    <div class="panel-body">Body</div>
+    <div class="panel-footer">Footer</div>
+  </div>
+</div>
+</div>
+<div class="col-lg-9">
+  <div *ngFor="let assignment of assignments" class="panel-group">
+  <div class="panel-group">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Heading{{assignment.title}}
+        <div class="m" style="float: right">{{currentTime}}</div>
+      </div>
+      <div class="panel-body">Body(teacher content with file uploaded by teacher)</div>
+      <div class="panel-footer" style="height: 80px">
+
+
+      <div class="form-group" style="float: right">
+        <label>Choose File</label>
+        <input type="file" (change)="fileuploads($event)" multiple class="form-control no-border">
+      </div>
+        <button type="submit" class="btn-primary btn-sm; fa fa-download" style="float: left;margin-top: 30px">Download</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--</div>-->
+<!--<div class="container" style="float: right">-->
+</div>
+  </div>
+
+
+

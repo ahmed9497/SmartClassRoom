@@ -1,0 +1,93 @@
+/*SideBar Menu Styling*/
+a{
+  color: white;
+  text-decoration: none;
+}
+.sidebar
+{
+  /*background-image: url("/src/assets/download.jpg");*/
+  position: fixed;
+  top: 100px;
+  /*background-color: #0088cc;*/
+}
+
+.sidebar ul{
+  padding: 0px;
+  transform: translate(-270px,0);
+}
+
+.sidebar ul li{
+  display: block;
+  margin: 5px;
+  background: rgba(0,0,0,0.5);
+  width: 300px;
+  text-align: right;
+  padding: 10px;
+  border-radius: 0 30px 30px 0;
+  transition: all 1s;
+}
+
+.sidebar ul li:hover{
+  transform: translate(80px,0);
+  background: #f4096c;
+}
+
+.sidebar ul li:hover a{
+  color: white;
+}
+
+.sidebar ul li:hover i{
+  color: #f4096c;
+  background: white;
+  transform: rotate(360deg);
+  transition: all 1s;
+}
+
+.sidebar ul li i{
+  margin-left: 5px;
+  color: #000;
+  background: white;
+  /*padding: 10px;*/
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  background: #ffffff;
+  transform: rotate(0deg);
+}
+
+/*Modal For Course Create*/
+#myModal{
+  margin-top: 50px;
+}
+
+/*Style for Panel of classes joined*/
+.container{
+  margin-left: 100px;
+  margin-top: 60px;
+}
+.panel-heading{
+  height: 130px;
+  text-align: center;
+  /*background-image: url(../../../assets/download.jpg);*/
+  background-color: #c9c9c9;
+}
+.panel-heading a{
+  color: black;
+}
+.panel-body{
+  height: 130px;
+}
+.panel-footer{
+  height: 30px;
+}
+
+/*to display input-line instead of input-box*/
+.form-control{
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0px;
+}

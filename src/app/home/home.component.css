@@ -1,0 +1,39 @@
+.btn{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+
+}
+.image{
+  margin-top: 10px;
+}
+.navbar-brand {
+  padding: 0px; /* firefox bug fix */
+}
+.navbar-brand>img {
+  height: 100%;
+  margin-left: 20px;
+  /*margin-top: 5px;*/
+  /*padding: 15px; !* firefox bug fix *!*/
+  width: auto;
+}
+.navbar{
+  background-color: darkgreen;
+  border: 1px solid lightgray;
+}
+.navbar ul li a{
+  color: white;
+}
+.stdtec{
+  border: 1px solid lightgray;
+  float: right;
+  background-color:#08C;
+  margin-left: 5px;
+}
+.btn{
+  float: right;
+  margin-right: 10px;
+}
+.slider{
+  margin-top: -10px;
+}

@@ -1,0 +1,101 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav ">
+      <li><i class="fa fa-fw fa-navicon fa-2x" style="color: white; margin-top: 10px"></i>
+      </li>
+      <li><a routerLink="../home"><i class="fa fa-home"></i>Home</a></li>
+      <li><a routerLink="student-grades">Grades</a></li>
+      <li><a routerLink="student-quiz">Quiz</a></li>
+      <li><a routerLink="student-join-course">Join Course</a></li>
+      <li><a routerLink="student-assignment">Assignment</a></li>
+      <li><a routerLink="student-attendance">Attendance</a></li>
+      <li><a routerLink="student-subjects">Subjects</a></li>
+      <button class="button btn-md" data-toggle="modal" data-target="#myModal"
+              style="float: right; margin-left: 500px; margin-top: 10px; width: 60px">
+        <i class="fa fa-plus"></i>
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+           aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <button type="button" class="close"
+                      data-dismiss="modal">
+                <span aria-hidden="true">&times;</span>
+                <span class="sr-only">Close</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">
+                Join Class
+              </h4>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+              <form role="form">
+                <div class="form-group">
+                  <label>Course Code</label>
+                  <input type="text" class="form-control" id="courseCode" placeholder="Enter Course Code"/>
+                </div>
+              </form>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">
+                Join
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </ul>
+  </div>
+</nav>
+
+
+<nav class="sidebar">
+  <ul>
+    <li><a routerLink="student-profile-setting">Profile<i class="fa fa-user"></i></a></li>
+    <li><a routerLink="about-us">About Us<i class="fa fa-info-circle"></i></a></li>
+    <li><a routerLink="student-quiz">Quiz<i class="fa fa-question-circle"></i></a></li>
+    <li><a routerLink="student-assignment">Assignment<i class="fa fa-tasks"></i></a></li>
+    <li><a href="#">Signout<i class="fa fa-sign-out"></i></a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <!--<div class="row">-->
+    <div class="col-lg-4">
+      <div *ngFor="let subjects of subject">
+        <div class="panel panel-primary">
+          <div class="panel-heading">{{subject.header}}{{subject.subjectname}}</div>
+          <div class="panel-body">{{subject.body}}</div>
+          <div class="panel-footer">{{subject.footer}}</div>
+        </div>
+      </div>
+    </div>
+  <!--</div>-->
+</div>
+<!--<table class="table table-bordered">-->
+<!--<thead>-->
+<!--<tr>-->
+<!--<th>Email</th>-->
+<!--<th>Password</th>-->
+<!--</tr>-->
+<!--</thead>-->
+<!--<tbody>-->
+<!--<tr *ngFor="let student of students">-->
+<!--<td>{{student.password}}</td>-->
+<!--<td>{{student.email}}</td>-->
+<!--<td>john@example.com</td>-->
+<!--</tr>-->
+
+<!--</tbody>-->
+<!--</table>-->
+
+<!--<p>This is student profile</p>-->

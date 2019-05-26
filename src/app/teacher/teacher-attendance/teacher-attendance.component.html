@@ -1,0 +1,42 @@
+<div class="container-fluid" style="border: 1px solid black">
+  <!--<h2>QR code generator</h2>-->
+  <div class="col-sm-4">
+    <i class="fa fa-qrcode fa-3x col-sm-2 iconsetting"></i>
+  </div>
+  <div class="col-sm-6 text">
+    <h3>LMS QR-Code Generator</h3>
+  </div>
+</div>
+
+<div class=" page-header padding:120px;">
+  <div class="container">
+    <div class="row">
+      <!--<form [formGroup]="loginForm">-->
+      <div class="col-md-4 ml-auto mr-auto">
+        <div class="card card-inner" style="border: 1px solid black">
+          <!-- <form class="form" method="" action=""> -->
+          <div class="card-header card-header-primary text-center border-setting">
+            <h4 style="color: white">QR Code Generator </h4>
+            <div class="social-line">
+              <a routerLink="../student-registration" class="btn btn-primary btn-just-icon">
+                <i class="fa fa-qrcode"></i>
+              </a>
+            </div>
+          </div>
+          <!--<p class="text-divider text-center alert alert-danger" *ngIf="error">ERROR:{{error}}</p>-->
+          <div class="card-body border-setting2">
+
+            <div class="qrsetting ml-auto mr-auto">
+              <ngx-qrcode [qrc-element-type]="url" [qrc-value]="value">
+              </ngx-qrcode>
+            </div>
+
+            <input type="password" [(ngModel)]="value" class="inputsetting" size="30">
+            <!-- </form> -->
+        </div>
+      </div>
+      <!--</form>-->
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,72 @@
+
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
+
+.card-header {
+  background-color: purple;
+  height: 100px;
+}
+
+.social-line {
+  background-color: purple;
+}
+
+.btn-primary {
+  background-color: purple;
+  border: none;
+}
+
+.border-setting {
+  border-radius: 5px;
+  padding: 20px;
+  width: 90%;
+  height: 150px;
+  top: -30px;
+  position: relative;
+  left: 18px;
+
+}
+
+.border-setting2 {
+  border-radius: 5px;
+  height: 150px;
+}
+
+.input-group-addon {
+  background: transparent;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0px;
+}
+
+.form-control {
+  width: 90%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0px;
+}
+
+.form-group {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  alignment: center;
+}
+
+.text-center {
+  margin-bottom: 20px;
+}
+
+.card-signup {
+  background-color: white;
+  border-radius: 5px;
+}

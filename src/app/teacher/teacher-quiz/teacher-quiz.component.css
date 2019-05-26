@@ -1,0 +1,26 @@
+/*Card Setting*/
+.card-footer{
+  background-color: darkgrey;
+}
+.f{
+  padding: 5px;
+  color: black;
+  margin-left: 20px;
+}
+.radio{
+  color: black;
+}
+
+/*Navbar Setting*/
+.container-fluid{
+  background-color: darkgreen;
+}
+.iconsetting{
+  margin-top:10px ;
+  color: white;
+}
+.text{
+  color: white;
+  margin-left: 30px;
+}
+
