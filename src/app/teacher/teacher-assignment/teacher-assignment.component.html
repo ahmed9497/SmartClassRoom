@@ -49,14 +49,14 @@
   </div>
 </div>
 <div class="col-lg-9">
-  <div *ngFor="let assignment of assignments" class="panel-group">
+  <!-- <div *ngFor="let assignment of assignments" class="panel-group">
     <div class="panel panel-primary">
-      <div class="panel-heading">this{{assignment.title}} <!-- recieved data by service -->
-      <div class="m" style="float: right">{{currentTime}}</div></div> <!-- recieved data by service -->
+      <div class="panel-heading">this{{assignment.title}}  recieved data by service 
+      <div class="m" style="float: right">{{currentTime}}</div></div> 
       <div class="panel-body">
         <input type="text" class="form-control no-border " formControlName="detail" placeholder="Enter Detail about Assignment">
-      </div> <!-- {{assignment.detail}}recieved data by service -->
-      <div class="panel-footer" style="height: 80px"> <!--{{assignment.fileinfo}}--> <!-- recieved data by service -->
+      </div>  {{assignment.detail}}recieved data by service 
+      <div class="panel-footer" style="height: 80px"> {{assignment.fileinfo}}
         <div class="form-group" style="float: left">
           <label>Choose File</label>
           <input type="file" (change)="fileuploads($event)" multiple class="form-control no-border">
@@ -64,7 +64,29 @@
         <button type="submit" class="btn-primary btn-sm setting; fa fa-upload" style="float: right; margin-top: 30px">Upload</button>
       </div>
     </div>
+  </div> -->
+
+  <div class="panel-group">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+      <div class="m" style="float: right"></div></div> 
+      <div class="panel-body">
+        <input type="text" class="no-border"  [ngModel]="description" placeholder="Enter Detail about Assignment">
+      </div>  
+      <div class="panel-footer" style="height: 80px"> 
+        <div class="form-group" style="float: left">
+          <label>Choose File</label>
+          <input type="file" (change)="fileuploads($event)" multiple class="no-border">
+        </div>
+        <button type="submit" (click)="upload()" class="btn-primary btn-sm setting; fa fa-upload" style="float: right; margin-top: 30px">Upload</button>
+      </div>
+    </div>
   </div>
+  <p>{{ uploadPercent | async }}</p>
+  <progress [value]="uploadPercent |async" max="100">
+  </progress>
+  
+
 </div>
 </div>
 <div class="container" style="float: right">

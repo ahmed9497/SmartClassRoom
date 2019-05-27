@@ -1,4 +1,4 @@
-<form formGroup="joinForm">
+<form [formGroup]="joinForm" >
   <div class="form-group">
     <div class="container">
       <div class="jumbotron" style="background-color: #0088cc">
@@ -13,7 +13,7 @@
         <input type="text" class="form-control" formControlName="coursemarks" placeholder="Enter Course Marks">
         </div>
         <div class="col-sm-1" style="margin-top: 7px">
-        <button class="btn btn-primary">Create</button>
+        <button class="btn btn-primary" (click)="login()">Create</button>
         </div>
       </div>
     </div>

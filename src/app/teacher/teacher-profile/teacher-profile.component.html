@@ -37,25 +37,26 @@
 
             <!-- Modal Body -->
             <div class="modal-body">
-              <form role="form">
+              <form role="form" [formGroup]="courseForm" >
                 <div class="form-group">
                   <label>Subject Name</label>
-                  <input type="text" class="form-control" id="className" placeholder="Enter Subject Name"/>
+                  <input type="text" class="form-control" formControlName="coursename" placeholder="Enter Subject Name"/>
                 </div>
                 <div class="form-group">
                   <label>Course Code</label>
-                  <input type="text" class="form-control" id="courseCode" placeholder="Enter Course Code"/>
+                  <input type="text" class="form-control" formControlName="coursecode" placeholder="Enter Course Code"/>
                 </div>
                 <div class="form-group">
-                  <label>Section</label>
-                  <input type="text" class="form-control" id="section" placeholder="Enter Section"/>
+                  <!-- <label>Section</label> -->
+                 <label>Total Marks</label>
+                  <input type="text"  class="form-control" formControlName="coursemarks" placeholder="Enter Section"/>
                 </div>
               </form>
             </div>
 
             <!-- Modal Footer -->
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary">
+              <button type="button" class="btn btn-primary" (click)="createcourse()">
                 Create
               </button>
             </div>
@@ -75,7 +76,7 @@
     <li><a routerLink="about-us">About Us<i class="fa fa-info-circle"></i></a></li>
     <li><a routerLink="teacher-quiz">Quiz<i class="fa fa-question-circle"></i></a></li>
     <li><a routerLink="teacher-assignment">Assignment<i class="fa fa-tasks"></i></a></li>
-    <li><a href="#">Signout<i class="fa fa-sign-out"></i></a></li>
+    <li class="btn" (click)="signout()"><a>Signout<i class="fa fa-sign-out"></i></a></li>
   </ul>
 </nav>
 
