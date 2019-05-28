@@ -52,7 +52,7 @@ const routes: Routes = [
       {path: 'teacher-result', component: TeacherResultComponent},
       {path: 'teacher-profile-setting', component: TeacherProfileSettingComponent},
       {path: 'about-us', component: AboutUsComponent},
-      {path: 'lec-data', component: LecDataComponent},
+      {path: 'lec-data/:id', component: LecDataComponent},
       {path: 'teacher-subjects', component: TeacherSubjectsComponent},
       {path: 'student-enrolled', component: StudentEnrolledComponent},
     ]},

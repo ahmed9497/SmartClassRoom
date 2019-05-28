@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
-import { AngularFirestore, AngularFirestoreCollection  } from '@angular/fire/firestore';
-import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore} from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { finalize } from 'rxjs/operators';
 import {Observable} from 'rxjs'
 import {Service} from '../../service.service';

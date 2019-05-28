@@ -1,5 +1,4 @@
-
-/*Style for Panel of classes joined*/
+/* 
 .container{
   margin-left: 100px;
   margin-top: 60px;
@@ -7,7 +6,7 @@
 .panel-heading{
   height: 130px;
   text-align: center;
-  /*background-image: url(../../../assets/download.jpg);*/
+  /*background-image: url(../../../assets/download.jpg);
   background-color: #c9c9c9;
 }
 .panel-heading a{
@@ -20,7 +19,7 @@
   height: 30px;
 }
 
-/*to display input-line instead of input-box*/
+
 .form-control{
   background: transparent;
   border: none;
@@ -28,4 +27,62 @@
   -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 0px;
+}  */
+
+p {
+  font-size: 40px;
+  color:green;
+  font-weight: 200;
+  align-self: center;
+  text-align: center;
+}
+
+
+
+body{
+    background: #f2f2f2;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h3{
+     font-family: 'Josefin Sans', sans-serif;
+}
+
+.box{
+    padding:60px 0px;
+}
+
+.box-part{
+    background: #c5c5c5;
+    border-radius:20px;
+    padding:60px 10px;
+    margin:30px 0px;
+}
+
+.box-part:hover{
+    background:#d3c2d0;
+}
+
+.box-part:hover .fa , 
+.box-part:hover .title , 
+.box-part:hover .text ,
+.box-part:hover a{
+    z-index: 10;
+    box-shadow: #f2f2f2;
+    border-color: #9e3232;
+     color:#FFF;
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+   
+   
+}
+
+.text{
+    margin:20px 0px;
+}
+
+.fa{
+     color:#4183D7;
 }

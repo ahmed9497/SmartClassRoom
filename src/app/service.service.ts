@@ -3,8 +3,9 @@ import { AngularFirestore, AngularFirestoreCollection  } from '@angular/fire/fir
 import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireStorage } from '@angular/fire/storage';
 import {Router} from'@angular/router'
-import { Observable } from 'rxjs';
-import { map, first ,finalize} from 'rxjs/operators';
+import { Observable} from 'rxjs';
+import { map, first ,finalize,} from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,19 +16,16 @@ export class Service implements OnInit{
   file:any;
   uploadPercent: Observable<number>;
   downloadURL: Observable<string>;
+  subjects :Observable<any[]>;
+  courseCollection: AngularFirestoreCollection<any>;
+
 
 
   constructor (private afs:AngularFirestore ,private auth :AngularFireAuth,private router:Router,
     private storage : AngularFireStorage) {
-   
-console.log("service is running");
-    afs.collection('users').snapshotChanges().subscribe(item=>{
-      item.map(data=>{
-        console.log(data.payload.doc.data())
-      }) 
-    
-      
-     })
+  
+      console.log("service is running");
+      this.courseCollection = this.afs.collection('courses');
    }
 ngOnInit(){
  
@@ -118,7 +116,54 @@ const ref = this.storage.ref(`lectures/${file.name}`);
 .subscribe();
 }
 
+teacherSubjects(){
+  var user = this.auth.auth.currentUser;
 
+  this.subjects = this.afs.collection('courses' , ref=>
+    ref.where('tid','==',user.uid))
+   .snapshotChanges();
+  
+  // console.log(this.subjects);
+   return this.subjects;
+  //  .subscribe(d=>{
+  //    console.log(d);
+  //    d.map(a=>{
+  //     console.log(a);
+  //       const data =a.payload.doc.data();
+  //       //data.id =a.payload.doc.id;
+  //       return data;
+  //     })
+   
+  
+  // })
+//   this.subjects =this.afs.collection('courses' , ref=>
+//   ref.where('tid','==',user.uid))
+//  .snapshotChanges().map(d=>{
+//    console.log(d);
+//    d.map(a=>{
+//     console.log(a);
+//       const data =a.payload.doc.data();
+//      // data.id =a.payload.doc.id
+//       return data;
+//     })
+ 
+
+// })
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+}
 
 
 

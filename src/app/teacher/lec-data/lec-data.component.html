@@ -13,7 +13,7 @@
 
 
 <div class="container">
-  <div class="col-lg-3">
+  <!-- <div class="col-lg-3">
     <div class="panel-group">
       <div class="panel panel-primary">
         <div class="panel-heading">Heading(Upcomming)</div>
@@ -25,23 +25,23 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="col-lg-9">
-    <div *ngFor="let lecdata of lecdata" class="panel-group">
+    <div  class="panel-group">
       <div class="panel panel-primary">
-        <div class="panel-heading">this{{lecdata.title}} <!-- recieved data by service -->
-          <div class="m" style="float: right">this{{currentTime}}</div>
+        <div class="panel-heading"> 
+          <div class="m" style="float: right"></div>
         </div> <!-- recieved data by service -->
         <div class="panel-body">
           <input type="text" class="form-control no-border " formControlName="detail"
-                 placeholder="Enter Detail about Lecture">
+          [ngModel]="description"     placeholder="Enter Detail about Lecture">
         </div> <!-- recieved data by service -->
         <div class="panel-footer" style="height: 80px"> <!-- recieved data by service -->
           <div class="form-group" style="float: left">
             <label>Choose File</label>
             <input type="file" (change)="fileuploads($event)" multiple class="form-control no-border">
           </div>
-          <button type="submit" class="btn-primary btn-sm setting; fa fa-upload" style="float: right; margin-top: 30px">
+          <button type="submit" (click)="upload()" class="btn-primary btn-sm setting; fa fa-upload" style="float: right; margin-top: 30px">
             Upload
           </button>
         </div>
@@ -49,6 +49,10 @@
     </div>
   </div>
 </div>
+<p>{{ uploadPercent | async }}</p>
+<p>{{ downloadURL | async }}</p>
+<progress [value]="uploadPercent |async" max="100">
+</progress>
 <!--</div>-->
 <!--<div class="container" style="float: right">-->
 <!--</div>-->
