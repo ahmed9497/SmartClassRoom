@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
-import { AngularFirestore} from '@angular/fire/firestore';
+import { AngularFirestore,   } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { finalize } from 'rxjs/operators';
 import {Observable} from 'rxjs'
 import {Service} from '../../service.service';
-import {Router} from'@angular/router';
+import {ActivatedRoute,Router} from'@angular/router';
+
 @Component({
   selector: 'app-teacher-assignment',
   templateUrl: './teacher-assignment.component.html',
@@ -13,74 +14,89 @@ import {Router} from'@angular/router';
 })
 export class TeacherAssignmentComponent implements OnInit {
 
-  description:string = "this is file to upload"
-
-  file:any;
+  assign_des: string = "";
+  id: any;
+  file: any;
   uploadPercent: Observable<number>;
-  downloadURL : Observable<number>;
-
-  constructor( private service :Service ,private router :Router ,
-    private storage :AngularFireStorage,
-    private afs :AngularFirestore,
-    private auth : AngularFireAuth) {
-  }
-
+  downloadURL: Observable<number>;
+  temp: any = [];
+  constructor(
+    private service: Service,
+    private router: Router,
+    private storage: AngularFireStorage,
+    private afs: AngularFirestore,
+    private route: ActivatedRoute,
+    private auth: AngularFireAuth
+  ) {}
   ngOnInit() {
-    // this.assignments = this.assignmentService.assignments; // data display
-    // const today = new Date(); // current date time picker function
-    // const date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
-    // const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
-    // this.currentTime = date + ' ' + time;
+    this.id = this.route.snapshot.params["id"];
   }
 
-  fileuploads(event) {       // fileupload function
-    console.log(event.target.files[0]);
+  fileuploads(event) {
+    // fileupload function
+   
     this.file = event.target.files[0];
     //this.service.teacherUploadAssignment(event.target.files[0])
   }
-  
-upload(){
-  const user =this.auth.auth.currentUser;
-  console.log(this.file);
-  //this.service.teacherUploadAssignment(this.file)
-  //this.service.uploadPercent.subscribe(i=>console.log(i))
-  const ref = this.storage.ref(`lectures/${this.file.name}`);
-  const task = ref.put(this.file);
-  this.uploadPercent = task.percentageChanges();
-  this.uploadPercent.subscribe(i=>console.log(i));
-  task.snapshotChanges().pipe(
-    finalize(() => {
-      this.downloadURL = ref.getDownloadURL()
-      console.log(this.downloadURL);
-      this.afs.collection('courses', ref => ref.where('tid', '==', user.uid).where('course_code','==','eng121'))
-      .snapshotChanges().subscribe(i=>{
-        i.map(i=>{
 
-          console.log(i.payload.doc.id);
-          this.afs.doc(`courses/${i.payload.doc.id}`).update({
-            lectures:[this.downloadURL]
-          })
-
-        }
-          )})
-      })
-  ).subscribe(i=>console.log(i))
-    }
-    
-  
+  upload() {
+    const user = this.auth.auth.currentUser;
    
+    // this.service.teacherUploadAssignment(this.file)
+    // this.service.uploadPercent.subscribe(i=>console.log(i))
+    const ref = this.storage.ref(`assignments/${this.file.name}`);
+    const task = ref.put(this.file);
+    this.uploadPercent = task.percentageChanges();
+    
 
+    this.afs
+      .doc(`courses/${this.id}`)
+      .snapshotChanges()
+      .subscribe(i => {
+       
+        const data = i.payload.data() as Course;
+      
 
+        this.temp = [...data.assignments];
+       
+      });
 
+    task
+      .snapshotChanges()
+      .pipe(
+        finalize(() => {
+          this.downloadURL = ref.getDownloadURL();
+          this.downloadURL.subscribe(url => {
+           
 
+            this.assignments(url);
+          });
+        })
+      )
+      .subscribe(i => {
+       
+      });
+  }
 
+  assignments(url) {
+  
+    this.temp.push({
+      href: url,
+      description: this.assign_des
+    });
+    
+    this.afs
+      .doc(`courses/${this.id}`)
+      .update({
+        assignments: this.temp
+      });
+     
+  }
+}
 
-
-
-
-
-
-
-
-
+interface Course {
+  course_name ? : string;
+  course_code ?: string;
+  lectures ?: [];
+  assignments?:[];
 }

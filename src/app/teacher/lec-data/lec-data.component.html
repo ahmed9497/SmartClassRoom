@@ -3,8 +3,9 @@
 <div class="navbar navbar-default">
   <div class="container-fluid top-inner">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Current</a></li>
-      <li><a routerLink="../student-enrolled">Enrolled</a></li>
+      <li class="active"><a>Current</a></li>
+      <li><a routerLink="../../">Enrolled</a></li> 
+     
     </ul>
   </div>
 </div>
@@ -31,10 +32,12 @@
       <div class="panel panel-primary">
         <div class="panel-heading"> 
           <div class="m" style="float: right"></div>
-        </div> <!-- recieved data by service -->
+        </div> 
+          <h1>Upload Lecture</h1>
         <div class="panel-body">
-          <input type="text" class="form-control no-border " formControlName="detail"
-          [ngModel]="description"     placeholder="Enter Detail about Lecture">
+          <input type="text" class="no-border" 
+          [(ngModel)] ="lect_des"     placeholder="Enter Detail about Lecture">
+     
         </div> <!-- recieved data by service -->
         <div class="panel-footer" style="height: 80px"> <!-- recieved data by service -->
           <div class="form-group" style="float: left">
@@ -49,10 +52,19 @@
     </div>
   </div>
 </div>
+
+
 <p>{{ uploadPercent | async }}</p>
+
 <p>{{ downloadURL | async }}</p>
-<progress [value]="uploadPercent |async" max="100">
+<progress [value]="uploadPercent |async" max="100" >
 </progress>
 <!--</div>-->
 <!--<div class="container" style="float: right">-->
 <!--</div>-->
+
+
+<app-teacher-assignment></app-teacher-assignment>
+
+
+<app-teacher-quiz></app-teacher-quiz>

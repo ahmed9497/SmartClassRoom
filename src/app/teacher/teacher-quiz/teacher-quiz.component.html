@@ -41,7 +41,7 @@
 </div>
 
 <div class="row">     <!--*ngFor="let quiz of quizs"-->
-  <form formGroup="quizForm">
+  <form  [formGroup]="quizForm">
     <div class="col-sm-6 col-lg-offset-3">
       <div class="card text-center bg-primary">
         <!--<div class="card-header">{{quizService.qnProgress+1}}</div>-->
@@ -50,26 +50,30 @@
                                         placeholder="Enter Question"></h5>
           <div class="radio">
             <!--<label><input type="radio" name="option" value="A"/></label>-->
-            <label>A</label> <input type="text" name="question-1-answers" id="question-1-answers-A" value=""/>
+            <label>A</label> <input type="text" class="form-control" formControlName="option-A" id="question-1-answers-A" value=""/>
           </div>
           <div class="radio">
             <!--<label><input type="radio" name="option" value="B"/></label>-->
-            <label>B</label><input type="text" name="question-1-answers" id="question-1-answers-B" value=""/>
+            <label>B</label><input type="text" class="form-control" formControlName="option-B" id="question-1-answers-B" value=""/>
           </div>
           <div class="radio">
             <!--<label><input type="radio" name="option" value="C"/></label>-->
-            <label>C</label> <input type="text" name="question-1-answers" id="question-1-answers-C" value=""/>
+            <label>C</label> <input type="text"class="form-control"  formControlName="option-C" id="question-1-answers-C" value=""/>
           </div>
           <div class="radio">
             <!--<label><input type="radio" name="option" value="D"/></label>-->
-            <label>D</label> <input type="text" name="question-1-answers" id="question-1-answers-D" value=""/>
+            <label>D</label> <input type="text" class="form-control" formControlName="option-D" id="question-1-answers-D" value=""/>
           </div>
         </div>
         <div class="card-footer">
-          <label class="f"><input type="text" formControlName="answer" placeholder="Enter Correct Answer"></label>
+          <label class="f"><input type="text" class="form-control"  formControlName="answer" placeholder="Enter Correct Answer"></label>
           <div>
-            <label><button type="submit" (click)="submit()" class="btn btn-primary">
+            <label><button type="submit" (click)="next()" class="btn btn-primary">
               Next
+            </button>
+            </label>
+            <label><button type="submit" (click)="submit()" class="btn btn-primary">
+              Submit
             </button>
             </label>
           </div>

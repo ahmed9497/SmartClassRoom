@@ -70,8 +70,10 @@
     <div class="panel panel-primary">
       <div class="panel-heading">
       <div class="m" style="float: right"></div></div> 
+      <h1>Upload Assignment</h1>
+      
       <div class="panel-body">
-        <input type="text" class="no-border"  [ngModel]="description" placeholder="Enter Detail about Assignment">
+        <input type="text" class="no-border"   [(ngModel)] ="assign_des"  placeholder="Enter Detail about Assignment">
       </div>  
       <div class="panel-footer" style="height: 80px"> 
         <div class="form-group" style="float: left">
@@ -83,9 +85,10 @@
     </div>
   </div>
   <p>{{ uploadPercent | async }}</p>
-  <progress [value]="uploadPercent |async" max="100">
-  </progress>
-  
+
+<p>{{ downloadURL | async }}</p>
+<progress [value]="uploadPercent |async" max="100" >
+</progress>
 
 </div>
 </div>

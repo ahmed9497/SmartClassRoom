@@ -165,7 +165,11 @@ teacherSubjects(){
 
 }
 
-
+generateQuiz(quiz,id){
+  
+  console.log(quiz ,id);
+  this.afs.collection(`courses/${id}/quiz`).add({quiz});
+}
 
 
 

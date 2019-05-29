@@ -27,3 +27,9 @@
 .footsetting{        /*Upcomming Panel Settings*/
   height: 50px;
 }
+progress[value] {
+  width: 550px;
+  height: 20px;
+  align-self: center;
+  align-content: center;
+}
